@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpinVinyl</title>
+</head>
+<body>
+    <!-- (c) Layout created by xsergiong (https://layouts.spacehey.com/layout?id=29048) -->
+
+    <!--
+    
+    MAKE SURE YOU READ THE TEXT IN BETWEEN THE /***** *****/ TO BE ABLE TO CUSTOMIZE YOUR LAYOUT EASILY
+
+    -->
+
+    <style>
+        #spin-vinyl-container
+        {
+            /*****INPUT HERE YOUR DESIRED TEXT COLOR*****/--text-color: #000;
+
+            /*****INPUT HERE YOUR DESIRED TEXT SIZE*****/--text-size: 48px;
+
+            /*****INPUT HERE THE LINK TO YOUR ALBUM IMAGE*****/--album-img: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX3P5vUGJ4wCg1O8ebZ2sumQoh_KLcOp5TFA&s);
+
+            /*****INPUT HERE THE LINK TO YOUR VINYL IMAGE*****/--vinyl-img: url(https://blood-records.co.uk/cdn/shop/files/BLOOD566-POPPY-SITE_1000x1000.png?v=1766763180);
+
+            /*****INPUT HERE YOUR DESIRED ALBUM SIZE*****/--size: 480px;
+
+            /*****INPUT HERE YOUR DESIRED SPINNING SPEED. THE SMALLER THE FASTER*****/--speed: 1s;
+
+            text-align: center;
+            height: fit-content;
+            width: calc(var(--size) * 1.5);
+        }
+        #spin-vinyl-container h2
+        {
+            font-size: var(--text-size);
+
+            color: var(--text-color);
+        }
+        #album-img
+        {
+            height: var(--size);
+            width: var(--size);
+
+            position: relative;
+
+            background-size: var(--size);
+            background-image: var(--album-img);
+            background-position: center;
+
+            z-index: 1;
+        }
+        #vinyl-img
+        {
+            height: var(--size);
+            width: var(--size);
+
+            position: relative;
+
+            background-size: var(--size);
+            background-image: var(--vinyl-img);
+            background-position: center;
+
+            bottom: var(--size);
+            left: calc(var(--size) / 2);
+
+            z-index: 0;
+
+            animation: vinyl-rotation var(--speed) linear infinite;
+        }
+        @-webkit-keyframes vinyl-rotation
+        {
+            from {-webkit-transform: rotate(360deg) }
+            to {-webkit-transform: rotate(0deg) }
+        }
+    </style>
+
+    <section id="spin-vinyl-container">
+        <h2>
+            Now listening to
+        </h2>
+        <div id="album-img"></div>
+        <div id="vinyl-img"></div>
+    </section>
+</body>
+</html>
